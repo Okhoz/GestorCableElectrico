@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Cables>
+  <Cable_electrico Numero_de_serie="3323">
+    <Cantidad_de_conductores>32</Cantidad_de_conductores>
+    <Marca_del_cable>Siemens</Marca_del_cable>
+    <Metros>32</Metros>
+    <Seccion_del_cable>1</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>False</Fachada_o_Vivienda>
+    <Fecha_de_compra>31,12,2025</Fecha_de_compra>
+    <Fecha_de_vencimiento>09,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="788">
+    <Cantidad_de_conductores>23</Cantidad_de_conductores>
+    <Marca_del_cable>Electra.ING</Marca_del_cable>
+    <Metros>3</Metros>
+    <Seccion_del_cable>4</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>True</Fachada_o_Vivienda>
+    <Fecha_de_compra>01,01,2026</Fecha_de_compra>
+    <Fecha_de_vencimiento>25,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="4300">
+    <Cantidad_de_conductores>54</Cantidad_de_conductores>
+    <Marca_del_cable>Electra.ING</Marca_del_cable>
+    <Metros>3</Metros>
+    <Seccion_del_cable>4</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>True</Fachada_o_Vivienda>
+    <Fecha_de_compra>01,01,2026</Fecha_de_compra>
+    <Fecha_de_vencimiento>25,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="43100">
+    <Cantidad_de_conductores>54</Cantidad_de_conductores>
+    <Marca_del_cable>Electra.ING</Marca_del_cable>
+    <Metros>3</Metros>
+    <Seccion_del_cable>5</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>True</Fachada_o_Vivienda>
+    <Fecha_de_compra>01,01,2026</Fecha_de_compra>
+    <Fecha_de_vencimiento>25,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="3200">
+    <Cantidad_de_conductores>43</Cantidad_de_conductores>
+    <Marca_del_cable>siemes</Marca_del_cable>
+    <Metros>43</Metros>
+    <Seccion_del_cable>5</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>False</Fachada_o_Vivienda>
+    <Fecha_de_compra>25,12,2025</Fecha_de_compra>
+    <Fecha_de_vencimiento>25,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="643">
+    <Cantidad_de_conductores>32</Cantidad_de_conductores>
+    <Marca_del_cable>ingelect</Marca_del_cable>
+    <Metros>23</Metros>
+    <Seccion_del_cable>4</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>True</Fachada_o_Vivienda>
+    <Fecha_de_compra>02,01,2030</Fecha_de_compra>
+    <Fecha_de_vencimiento>26,12,2025</Fecha_de_vencimiento>
+  </Cable_electrico>
+  <Cable_electrico Numero_de_serie="32">
+    <Cantidad_de_conductores>12</Cantidad_de_conductores>
+    <Marca_del_cable>ingelect</Marca_del_cable>
+    <Metros>233</Metros>
+    <Seccion_del_cable>3</Seccion_del_cable>
+    <Libre_de_Halogenos>True</Libre_de_Halogenos>
+    <Fachada_o_Vivienda>True</Fachada_o_Vivienda>
+    <Fecha_de_compra>17,12,2025</Fecha_de_compra>
+    <Fecha_de_vencimiento>01,12,2323</Fecha_de_vencimiento>
+  </Cable_electrico>
+</Cables>

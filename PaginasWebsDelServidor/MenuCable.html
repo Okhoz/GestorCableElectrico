@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información del Cable</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #1e88e5;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.2s;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e88e5;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        form {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        input, select {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        input:focus, select:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 5px rgba(30,136,229,0.4);
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        button {
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .delete {
+            background: linear-gradient(135deg, #ff6b6b, #e53935);
+            color: white;
+        }
+        .delete:hover {
+            background: linear-gradient(135deg, #e53935, #c62828);
+        }
+
+        .edit {
+            background: linear-gradient(135deg, #ffd54f, #f9a825);
+            color: #333;
+        }
+        .edit:hover {
+            background: linear-gradient(135deg, #f9a825, #f57f17);
+        }
+
+        .add {
+            background: linear-gradient(135deg, #66bb6a, #2e7d32);
+            color: white;
+        }
+        .add:hover {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+        }
+
+        .filter {
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            color: white;
+        }
+        .filter:hover {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        thead {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        thead th {
+            padding: 14px;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        tbody td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        @media(max-width: 900px){
+            .toolbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Datos del Cable</h1>
+
+    <div class="toolbar">
+
+        <!-- FILTRAR A LA IZQUIERDA -->
+        <div class="section">
+            <div class="section-title">Filtrar resultados</div>
+            <div class="actions">
+                <form action="http://localhost:8080/" method="get">
+                    <input type="hidden" name="accion" value="getelement">
+                    <select id="filtroSelect" required>
+                        <option value="">Filtrar por...</option>
+                        <option value="id">ID</option>
+                        <option value="fechaCompra">Fecha de compra</option>
+                        <option value="metros">Metros</option>
+                    </select>
+                    <input type="text" id="valorInput" name="valor" placeholder="Valor filtro" required>
+                    <button type="submit" class="filter">Filtrar</button>
+                </form>
+
+                <!-- VISUALIZAR TODOS -->
+                <form action="http://localhost:8080/" method="get">
+                    <input type="hidden" name="accion" value="getelements">
+                    <button type="submit" class="filter">Visualizar todos</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- GESTIÓN A LA DERECHA -->
+        <div class="section">
+            <div class="section-title">Gestión de cables</div>
+            <div class="actions">
+
+                <!-- BORRAR -->
+                <form action="http://localhost:8080/" method="get">
+                    <input type="hidden" name="accion" value="deleteelement">
+                    <input type="number" name="id" placeholder="ID" required>
+                    <button type="submit" class="delete">Borrar</button>
+                </form>
+
+                <!-- MODIFICAR -->
+                <form action="http://localhost:8080/" method="get">
+                    <input type="hidden" name="accion" value="editelement">
+                    <input type="number" name="id" placeholder="ID" required>
+                    <button type="submit" class="edit">Modificar</button>
+                </form>
+
+                <!-- AÑADIR -->
+                <form action="http://localhost:8080/" method="get">
+                    <input type="hidden" name="accion" value="addelement">
+                    <button type="submit" class="add">Añadir cable</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TABLA DE CABLES -->
+    <table>
+        <thead>
+            <tr>
+                <th>Número de serie</th>
+                <th>Cantidad de conductores</th>
+                <th>Marca del cable</th>
+                <th>Metros</th>
+                <th>Sección del cable</th>
+                <th>Libre de halógenos</th>
+                <th>Fachada o vivienda</th>
+                <th>Fecha de compra</th>
+                <th>Fecha de vencimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{{tabla}}}
+        </tbody>
+    </table>
+
+<script>
+    const select = document.getElementById('filtroSelect');
+    const input = document.getElementById('valorInput');
+    const form = input.closest('form');
+
+    // Creamos un input oculto para enviar la fecha en formato dd-mm-yyyy
+    let hiddenDateInput = document.createElement('input');
+    hiddenDateInput.type = 'hidden';
+    hiddenDateInput.name = 'fechaCompra';
+    form.appendChild(hiddenDateInput);
+
+    function actualizarInput() {
+        const valor = select.value;
+
+        if (valor === 'id' || valor === 'metros') {
+            input.type = 'number';
+            input.placeholder = 'Ingrese un número';
+            input.value = '';
+            input.style.display = 'inline-block';
+            input.name = valor;
+            hiddenDateInput.style.display = 'none';
+        } else if (valor === 'fechaCompra') {
+            input.type = 'date';
+            input.placeholder = '';
+            input.value = '';
+            input.style.display = 'inline-block';
+            input.name = '';
+            hiddenDateInput.style.display = 'inline';
+        } else {
+            input.type = 'text';
+            input.placeholder = 'Valor filtro';
+            input.value = '';
+            input.style.display = 'none';
+            input.name = 'valor';
+            hiddenDateInput.style.display = 'none';
+        }
+    }
+
+    select.addEventListener('change', actualizarInput);
+
+    form.addEventListener('submit', function(e) {
+        if (select.value === 'fechaCompra' && input.value) {
+            const partes = input.value.split('-');
+            hiddenDateInput.value = `${partes[2]}-${partes[1]}-${partes[0]}`;
+        }
+    });
+
+    actualizarInput();
+</script>
+
+</body>
+</html>
